@@ -1,0 +1,8 @@
+<div>
+  <% if @messages %>
+    <%= "All Commits: " %><br>
+    <% @messages.each do |commit| %>
+    <%= commit %><br>
+    <% end %>
+  <% end %>
+</div>

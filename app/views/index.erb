@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Github API Fun!</h1>
+
+  <form method='post' action='/repo'>
+    <input type='text' name='repo'>
+    <button id="repo_submit">Commit Stats</button>
+  </form>
+
+  <div id="github_info">
+    <% if @num_commits %> <p>There were <%= @num_commits %> commits.</p>
+    <% end %>   
+
+    <p><% if @last_commit && @last_commit_time %>
+      The last commit was committed at <%= @last_commit_time %>,<br>
+      with the message: <%= @last_commit %><% end %></p> 
+      
+   
+   <div class="commit_log">
+     <%= erb :_commits, :layout => false %>
+   </div>
+
+</div>
